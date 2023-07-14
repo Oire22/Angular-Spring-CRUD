@@ -1,0 +1,24 @@
+#titulo{
+    margin-top: 5px;
+    margin-left: 0px;
+
+}
+
+#lista{
+    margin-left: 10px;
+}
+
+#altaBaja{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#editar{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+#editar input{
+    margin: 5px;
+}

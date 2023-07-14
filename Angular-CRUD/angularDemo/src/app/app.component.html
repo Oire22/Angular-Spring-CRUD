@@ -1,0 +1,75 @@
+<section id="titulo">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Alta, Baja, Modificación y Lectura de datos de personas</h4>
+      </div>
+      <div class="col-sm-6 col-xs-12" style="justify-items: right;">
+        <h4>Spring-Angular CRUD</h4>
+      </div>
+    </div>
+  </div>
+</section>
+  
+    <!-- ver usuarios en pantalla -->
+<section id="lista">
+  <h2>Lista de personas</h2>
+  <ul>
+    <li *ngFor="let personas of personas">
+      <ul>Nombre: {{ personas.nombre }}, Apellido: {{ personas.apellido }}, Edad: {{personas.edad}} </ul>
+    </li>
+  </ul>
+</section>  
+
+
+<section id="altaBaja">
+  <div class="container-fluid">
+    <div class="row g-3">
+      <div class="col-sm-6 col-xs-12">
+        <h2>Dar de Alta</h2>
+        <form (ngSubmit)="onSubmit()">
+          <ul>
+            <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Nombre">
+          </ul>
+          <ul>
+            <input type="text" [(ngModel)]="apellido" name="apellido" placeholder="Apellido">
+          </ul>
+          <ul>
+            <input type="number" [(ngModel)]="edad" name="edad" placeholder="Edad">
+          </ul>
+          <ul>
+            <button type="submit">Submit</button>
+          </ul>
+        </form>
+      </div>
+      <div class="col-sm-4 col-xs-6">
+        <h2>Dar de baja</h2>
+        <form>
+          <div class="form-group">
+            <label for="id">Introduce el ID del elemento a borrar:</label>
+            <input type="number" class="form-control" id="id" [(ngModel)]="id" name="id">
+          </div>
+          <button type="button" class="btn btn-danger" (click)="eliminar(id)">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+<section id="editar">   
+  <h2>Editar persona</h2>
+    <form (ngSubmit)="submit()">
+      <div class="form-row">
+        <div class="col-md-12">
+            <input type="number" name="id" [(ngModel)]="persona.id"  required placeholder="ID">
+            <input type="text" name="nombre" [(ngModel)]="persona.nombre"  required placeholder="Nombre">
+            <input type="text" name="apellido" [(ngModel)]="persona.apellido"  required placeholder="Apellido">
+            <input type="number" name="edad" [(ngModel)]="persona.edad"  required placeholder="Edad">
+        </div>
+      </div>
+        <button type="submit">
+        Modificar
+        </button>
+    </form>
+</section>
+
